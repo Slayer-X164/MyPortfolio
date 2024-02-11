@@ -585,6 +585,22 @@ video {
   height: 100vh;
 }
 
+.h-2 {
+  height: 0.5rem;
+}
+
+.h-1 {
+  height: 0.25rem;
+}
+
+.h-\[\] {
+  height: ;
+}
+
+.h-\[2px\] {
+  height: 2px;
+}
+
 .w-full {
   width: 100%;
 }
@@ -599,6 +615,14 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-32 {
+  width: 8rem;
+}
+
+.w-60 {
+  width: 15rem;
 }
 
 .flex-col {
@@ -686,6 +710,11 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .pb-1 {
@@ -791,6 +820,10 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:h-screen {
+    height: 100vh;
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
