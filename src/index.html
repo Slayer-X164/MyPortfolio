@@ -26,7 +26,7 @@
       </div>
       <div
         id="nav-links"
-        class="lg:flex absolute md:relative bg-white top-[-100%] duration-500 md:top-0 flex justify-center text-center md:justify-end w-full left-0"
+        class="lg:flex absolute md:relative bg-blue-100 py-4 border-2 border-black md:border-0 md:bg-white md:py-0 top-[-100%] duration-300 md:top-0 flex justify-center text-center md:justify-end w-full left-0"
       >
         <ul class="gap-8 md:gap-10 p-4 md:p-0 flex flex-col md:flex-row">
           <li>
@@ -164,7 +164,7 @@
       const navLinks = document.querySelector("#nav-links");
       function onToggleMenu(e) {
         e.name = e.name === "menu" ? "close" : "menu";
-        navLinks.classList.toggle("top-[9%]");
+        navLinks.classList.toggle("top-[10%]");
       }
     </script>
   </body>
