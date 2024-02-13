@@ -9,48 +9,63 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </head>
-  <body class="w-[100%] h-[100%] md:h-screen box-border">
+  <body class="w-[100%] h-[100%] md:h-screen box-border scroll-smooth">
     <!-- Nav -->
-    <nav
-      class="md:h-20 h-16 px-4 md:px-40 flex justify-between md:justify-around items-center"
-    >
+    <nav class="md:h-20 h-16 px-4 md:px-40 flex justify-between items-center">
       <div class="">
         <h1 class="text-4xl font-extrabold text-blue-700 uppercase">Sidd.</h1>
       </div>
-      <div class="hidden lg:flex">
-        <ul class="flex gap-10">
+      <div
+        id="nav-links"
+        class="lg:flex absolute md:relative bg-white top-[-100%] duration-500 md:top-0 flex justify-center text-center md:justify-end w-full left-0"
+      >
+        <ul class="gap-8 md:gap-10 p-4 md:p-0 flex flex-col md:flex-row">
           <li>
             <a
-              class="text-2xl font-normal hover:underline-offset-[20px] hover:text-gray-500 md:hover:underline md:hover:underline-o hover:ease-in-out hover:duration-200 uppercase"
-              href="#"
+              class="text-2xl border-b-4 rounded-md md:border-0 border-blue-600 font-normal hover:underline-offset-[20px] hover:text-gray-500 md:hover:underline md:hover:underline-o hover:ease-in-out hover:duration-200 uppercase"
+              href="#About"
               >About</a
             >
           </li>
           <li>
             <a
-              class="text-2xl font-normal hover:underline-offset-[20px] hover:text-gray-500 md:hover:underline md:hover:underline-o hover:ease-in-out hover:duration-200 uppercase"
+              class="text-2xl border-b-4 rounded-md md:border-0 border-blue-600 font-normal hover:underline-offset-[20px] hover:text-gray-500 md:hover:underline md:hover:underline-o hover:ease-in-out hover:duration-200 uppercase"
               href="#"
               >Experience</a
             >
           </li>
           <li>
             <a
-              class="text-2xl font-normal hover:underline-offset-[20px] hover:text-gray-500 md:hover:underline md:hover:underline-o hover:ease-in-out hover:duration-200 uppercase"
+              class="text-2xl border-b-4 rounded-md md:border-0 border-blue-600 font-normal hover:underline-offset-[20px] hover:text-gray-500 md:hover:underline md:hover:underline-o hover:ease-in-out hover:duration-200 uppercase"
               href="#"
               >Projects</a
             >
           </li>
           <li>
             <a
-              class="text-2xl font-normal hover:underline-offset-[20px] hover:text-gray-500 md:hover:underline md:hover:underline-o hover:ease-in-out hover:duration-200 uppercase"
+              class="text-2xl border-b-4 rounded-md md:border-0 border-blue-600 font-normal hover:underline-offset-[20px] hover:text-gray-500 md:hover:underline md:hover:underline-o hover:ease-in-out hover:duration-200 uppercase"
               href="#"
               >Contacts</a
             >
           </li>
         </ul>
       </div>
+      <ion-icon
+        name="menu"
+        class="lg:hidden text-[2.5rem] text-gray-700"
+        onclick="onToggleMenu(this)"
+      ></ion-icon>
     </nav>
+
     <!-- profile section -->
     <section
       class="w-[100%] h-[90%] flex flex-col justify-around md:justify-center md:gap-[5%] items-center m md:flex-row"
@@ -92,7 +107,7 @@
       <div class="w-60 h-[2px] rounded-lg bg-slate-500"></div>
     </div>
     <!-- about section -->
-    <div class="text-center mt-8">
+    <div id="About" class="text-center mt-8">
       <h1 class="font-bold text-3xl text-blue-700">About me</h1>
       <p class="text-sm font-semibold">My introduction</p>
     </div>
@@ -133,5 +148,24 @@
         </div>
       </div>
     </section>
+
+    <script>
+      // Smooth scroll behavior
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      const navLinks = document.querySelector("#nav-links");
+      function onToggleMenu(e) {
+        e.name = e.name === "menu" ? "close" : "menu";
+        navLinks.classList.toggle("top-[9%]");
+      }
+    </script>
   </body>
 </html>
